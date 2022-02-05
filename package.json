@@ -1,0 +1,28 @@
+{
+  "name": "employee-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cbracewell30/employee-database.git"
+  },
+  "author": "Chrs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cbracewell30/employee-database/issues"
+  },
+  "homepage": "https://github.com/Cbracewell30/employee-database#readme",
+  "devDependencies": {
+    "jest": "^27.5.0"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
