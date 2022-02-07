@@ -20,7 +20,7 @@ test('Checking Employee ID', () =>{
 })
 
 test('Checking Email', () =>{
-    const employee = new Employee ("Chris",123, "chris@gmail.com");
+    const employee = new Employee ("Chris",123,"chris@gmail.com");
     
     expect(employee.email).toBe("chris@gmail.com");
 })
