@@ -1,4 +1,4 @@
-// const Manager = require("../lib/Manager");
+const Manager = require("../lib/Manager");
 
 test ('Check for Manager Object', () => {
 const manager = new Manager ();
