@@ -5,26 +5,25 @@ function generateArray(internArray,managerArray,engineerArray) {
     for (let i=0;i<managerArray.length;i++){
       managerHTML += `
         <div class="card text-white bg-primary mb-3 align-self-center" style="max-width: 18rem;">
-      <div class="card-header">${managerArray[i].name}</div>
+      <div class="card-header">Name: ${managerArray[i].name}</div>
       <div class="card-body">
-        <h5 class="card-title">${managerArray[i].id} </h5>
-        <h3 class="card-title"> Manager </h3>
-        <p class="card-text"> Office number ${managerArray[i]. office} </p>
+        <h5 class="card-title">ID: ${managerArray[i].id} </h5>
+        <h3 class="card-title">Title: Manager </h3>
+        <p class="card-text"> Office number: ${managerArray[i]. office} </p>
         <a class="text-white" href= "mailto:${managerArray[i].email}"> Email me! </a>
       </div>
   </div>
         `
-    }
-s  
+    }  
   var internHTML = ``
   for (let i=0;i<internArray.length;i++){
       internHTML += `
       <div class="card text-white bg-primary mb-3 col " style="max-width: 18rem;">
-    <div class="card-header">${internArray[i].name}</div>
+    <div class="card-header">Name: ${internArray[i].name}</div>
     <div class="card-body">
-      <h5 class="card-title">${internArray[i].id} </h5>
-      <h3 class="card-title"> Intern </h3>
-      <p class="card-text"> ${internArray[i].school} </p>
+      <h5 class="card-title">ID: ${internArray[i].id} </h5>
+      <h3 class="card-title"> Title: Intern </h3>
+      <p class="card-text">School: ${internArray[i].school} </p>
       <a class="text-white" href= "mailto:${internArray[i].email}"> Email me! </a>
     </div>
 </div>
@@ -35,12 +34,12 @@ s
   for (let i=0;i<engineerArray.length;i++){
     engineerHTML += `
       <div class="card text-white bg-primary mb-3  col" style="max-width: 18rem;">
-    <div class="card-header ">${engineerArray[i].name}</div>
+    <div class="card-header ">Name: ${engineerArray[i].name}</div>
     <div class="card-body">
-      <h5 class="card-title">${engineerArray[i].id} </h5>
-      <h3 class="card-title "> Engineer </h3>
-      <a class="text-white" href= "https://github.com/${engineerArray[i].github}"> GitHub </a>
-      <a class="text-white" href= "mailto:${engineerArray[i].email}"> Email me! </a>
+      <h5 class="card-title">ID: ${engineerArray[i].id} </h5>
+      <h3 class="card-title ">Title: Engineer </h3>
+      <a class="text-white p-3" href= "https://github.com/${engineerArray[i].github}"> GitHub Account</a>
+      <a class="text-white p-3" href= "mailto:${engineerArray[i].email}"> Email me! </a>
     </div>
 </div>
       `
@@ -69,7 +68,7 @@ s
 </html>
 
 `
- console.log(htmlTEXT)
+
 fs.writeFileSync("./testfile/index.html",htmlTEXT,function(err){
 if(err) throw err;
 console.log("- File Generated --")

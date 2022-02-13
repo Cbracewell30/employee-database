@@ -1,7 +1,7 @@
 # Employee-database   ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)    
 
 ## Description
-Project allows orgiginzations to add and  track employees.
+Project allows organizations to add and  track employees.
 
 ### Table Of Contents
 * [License](#license)
