@@ -1,10 +1,25 @@
 const fs = require('fs');
 function generateArray(internArray,managerArray,engineerArray) {
     console.log(internArray,managerArray,engineerArray)
+    var managerHTML = ``
+    for (let i=0;i<managerArray.length;i++){
+      managerHTML += `
+        <div class="card text-white bg-primary mb-3 align-self-center" style="max-width: 18rem;">
+      <div class="card-header">${managerArray[i].name}</div>
+      <div class="card-body">
+        <h5 class="card-title">${managerArray[i].id} </h5>
+        <h3 class="card-title"> Manager </h3>
+        <p class="card-text"> Office number ${managerArray[i]. office} </p>
+        <a class="text-white" href= "mailto:${managerArray[i].email}"> Email me! </a>
+      </div>
+  </div>
+        `
+    }
+s  
   var internHTML = ``
   for (let i=0;i<internArray.length;i++){
       internHTML += `
-      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+      <div class="card text-white bg-primary mb-3 col " style="max-width: 18rem;">
     <div class="card-header">${internArray[i].name}</div>
     <div class="card-body">
       <h5 class="card-title">${internArray[i].id} </h5>
@@ -19,32 +34,18 @@ function generateArray(internArray,managerArray,engineerArray) {
   var engineerHTML = ``
   for (let i=0;i<engineerArray.length;i++){
     engineerHTML += `
-      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-    <div class="card-header">${engineerArray[i].name}</div>
+      <div class="card text-white bg-primary mb-3  col" style="max-width: 18rem;">
+    <div class="card-header ">${engineerArray[i].name}</div>
     <div class="card-body">
       <h5 class="card-title">${engineerArray[i].id} </h5>
-      <h3 class="card-title"> Engineer </h3>
+      <h3 class="card-title "> Engineer </h3>
       <a class="text-white" href= "https://github.com/${engineerArray[i].github}"> GitHub </a>
       <a class="text-white" href= "mailto:${engineerArray[i].email}"> Email me! </a>
     </div>
 </div>
       `
   }
-  var managerHTML = ``
-  for (let i=0;i<managerArray.length;i++){
-    managerHTML += `
-      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-    <div class="card-header">${managerArray[i].name}</div>
-    <div class="card-body">
-      <h5 class="card-title">${managerArray[i].id} </h5>
-      <h3 class="card-title"> Manager </h3>
-      <p class="card-text"> Office number ${managerArray[i]. office} </p>
-      <a class="text-white" href= "mailto:${managerArray[i].email}"> Email me! </a>
-    </div>
-</div>
-      `
-  }
-
+ 
   var htmlTEXT = `
     <!DOCTYPE html>
 <html lang="en">
@@ -57,11 +58,13 @@ function generateArray(internArray,managerArray,engineerArray) {
 </head>
 
 <body>
-<header class=" bg-info text-center" > <h1>My Team Chart <h1> 
+<header class=" bg-primary text-center text-white" > <h1>My Team Chart <h1> 
 </header>
-  <div class ="container">${managerHTML}</div>
-  <div class = "container">${internHTML}</div>
-  <div class = "container">${engineerHTML} </div>
+<div class = "container">
+  <div class ="row">${managerHTML}</div>
+  <div class = "row">${internHTML}</div>
+  <div class = "row">${engineerHTML} </div>
+  </div>
 </body>
 </html>
 
