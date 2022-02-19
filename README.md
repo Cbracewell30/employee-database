@@ -37,5 +37,8 @@ Langues used in this project include JavaScript,HTML,ES6,jQuery,Node
 #### Github
 [Check out my github](https://github.com/Cbracewell30/employee-database)
 
+#### Walkthrough Video
+https://watch.screencastify.com/v/LLZ1R0SawuRDTgemvgZM
+
 #### Email
 Feel free to reach me at chrisbracewell35@gmail.com for any questions regarding this project. 

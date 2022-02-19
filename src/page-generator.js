@@ -1,8 +1,13 @@
 const fs = require('fs');
+// Takes the answers frpom the questionaires and generates html page.
 function generateArray(internArray,managerArray,engineerArray) {
     console.log(internArray,managerArray,engineerArray)
+    // creating empty object 
     var managerHTML = ``
+
+    // looping through manager array
     for (let i=0;i<managerArray.length;i++){
+      // adding he info from the array into the html object 
       managerHTML += `
         <div class="card text-white bg-primary mb-3 align-self-center" style="max-width: 18rem;">
       <div class="card-header">Name: ${managerArray[i].name}</div>
@@ -16,6 +21,7 @@ function generateArray(internArray,managerArray,engineerArray) {
         `
     }  
   var internHTML = ``
+  // looping through intern array
   for (let i=0;i<internArray.length;i++){
       internHTML += `
       <div class="card text-white bg-primary mb-3 col " style="max-width: 18rem;">
@@ -31,6 +37,7 @@ function generateArray(internArray,managerArray,engineerArray) {
   }
   
   var engineerHTML = ``
+  // // looping through engineer array
   for (let i=0;i<engineerArray.length;i++){
     engineerHTML += `
       <div class="card text-white bg-primary mb-3  col" style="max-width: 18rem;">
@@ -45,6 +52,7 @@ function generateArray(internArray,managerArray,engineerArray) {
       `
   }
  
+  // creating html object
   var htmlTEXT = `
     <!DOCTYPE html>
 <html lang="en">
@@ -60,6 +68,7 @@ function generateArray(internArray,managerArray,engineerArray) {
 <header class=" bg-primary text-center text-white" > <h1>My Team Chart <h1> 
 </header>
 <div class = "container">
+
   <div class ="row">${managerHTML}</div>
   <div class = "row">${internHTML}</div>
   <div class = "row">${engineerHTML} </div>
@@ -68,11 +77,13 @@ function generateArray(internArray,managerArray,engineerArray) {
 </html>
 
 `
-
+// saving file in defined location using the html text info
 fs.writeFileSync("./testfile/index.html",htmlTEXT,function(err){
+// throwing an error if the file creation doesn't work. 
 if(err) throw err;
 console.log("- File Generated --")
 })
 
 };
+
 module.exports = generateArray

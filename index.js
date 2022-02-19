@@ -3,9 +3,13 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const generatepage = require('./src/page-generator')
+
+// creating empty arrays
 let managerArray = []
 let engineerArray = []
 let internArray = []
+
+//  Question prompt to get employee type
 
 function getInfo(){
     inquirer.prompt([
@@ -17,6 +21,7 @@ function getInfo(){
         }
 
   ])
+  // depending on the answer the application follows the correct path
   .then((answers) => {
       switch(answers.userMenu){
          case "Add Manager":
@@ -34,6 +39,8 @@ function getInfo(){
   })
 };
 
+
+// Manger questionaire 
 function addManager() {
 inquirer.prompt([
     {
@@ -60,6 +67,7 @@ inquirer.prompt([
         message: "What is the Employee's office number?",
         
     },
+    // create manager object with answers
 ]).then((answers) => {
     let newManager = new Manager(answers.name,answers.id,answers.email,answers.office)
     managerArray.push(newManager);
@@ -67,7 +75,7 @@ inquirer.prompt([
 })
 }
 
-
+// Engineer questionaire
 
 function addEngineer() {
     inquirer.prompt([
@@ -95,6 +103,7 @@ function addEngineer() {
             message: "What is the Engineer's GitHub username?",
             
         },
+        // create engineer object with answers
     ]).then((answers) => {
         let newEngineer = new Engineer(answers.name,answers.id,answers.email,answers.github)
         engineerArray.push(newEngineer);
@@ -103,7 +112,7 @@ function addEngineer() {
     
 }
     
-
+//Intern questionaire
     function addIntern() {
         inquirer.prompt([
             {
@@ -130,6 +139,7 @@ function addEngineer() {
                 message: "What is the Intern's school name?",
                 
             },
+            // create intern object with answers
         ]).then((answers) => {
             let newIntern = new Intern(answers.name,answers.id,answers.email,answers.school)
             internArray.push(newIntern);
@@ -138,7 +148,7 @@ function addEngineer() {
         })
     }
 
-
+// Function sends objects to generate page to create html page
 async function createDoc(){
 console.log(internArray,managerArray,engineerArray);
 console.log("generatepage")
@@ -146,4 +156,6 @@ console.log("generatepage")
 
     
 };
+
+// initiating employee type function.
     getInfo();
